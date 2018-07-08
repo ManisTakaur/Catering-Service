@@ -8,9 +8,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { Observable } from 'rxjs';
+// import { AngularFireDatabaseModule } from 'angularfire2/database';
+// import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { Observable } from 'rxjs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
@@ -21,6 +21,7 @@ import { CheckoutBillComponent } from './checkout-bill/checkout-bill.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
+import { MyOrdersComponent } from './my/my-orders/my-orders.component';
 
 
 
@@ -37,7 +38,7 @@ import { LoginComponent } from './login/login.component';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-
+    MyOrdersComponent,
   ],
 
   imports: [
@@ -52,7 +53,8 @@ import { LoginComponent } from './login/login.component';
       { path: 'order', component: OrderComponent },
       { path: 'checkout-bill', component: CheckoutBillComponent },
       { path: 'admin/products', component: AdminProductsComponent },
-      { path: 'admin/orders', component: AdminOrdersComponent }
+      { path: 'admin/orders', component: AdminOrdersComponent },
+      { path: 'my/my-orders', component: MyOrdersComponent}
     ])
      // imports firebase/app needed for everything
   ],
