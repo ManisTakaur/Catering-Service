@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -39,9 +39,11 @@ import { LoginComponent } from './login/login.component';
     LoginComponent,
 
   ],
+
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'app-root'),
+    NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },
