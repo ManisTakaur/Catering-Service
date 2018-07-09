@@ -43,7 +43,8 @@ import { MyOrdersComponent } from './my/my-orders/my-orders.component';
 
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase, 'app-root'),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },

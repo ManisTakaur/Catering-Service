@@ -1,2 +1,7 @@
 
-<p>login works</p>
+<button 
+    (click)="login()"    
+    class="btn btn-primary">Sign In
+</button>
+
+<span class="error" *ngIf="error">{{ error }}</span>
