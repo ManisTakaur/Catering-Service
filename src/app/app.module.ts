@@ -22,6 +22,7 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 import { MyOrdersComponent } from './my/my-orders/my-orders.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -39,6 +40,7 @@ import { MyOrdersComponent } from './my/my-orders/my-orders.component';
     AdminOrdersComponent,
     LoginComponent,
     MyOrdersComponent,
+    LogoutComponent,
   ],
 
   imports: [
@@ -49,6 +51,7 @@ import { MyOrdersComponent } from './my/my-orders/my-orders.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'logout', component: LogoutComponent },      
       { path: 'products', component: ProductsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'order', component: OrderComponent },
