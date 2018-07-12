@@ -23,6 +23,7 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { LoginComponent } from './login/login.component';
 import { MyOrdersComponent } from './my/my-orders/my-orders.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AuthenticationService } from './authentication.service';
 
 
 
@@ -62,7 +63,9 @@ import { LogoutComponent } from './logout/logout.component';
     ])
      // imports firebase/app needed for everything
   ],
-  providers: [],
+  providers: [
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

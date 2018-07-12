@@ -3,6 +3,7 @@ import { Component} from '@angular/core';
 // import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,12 @@ import { auth } from 'firebase';
 })
 export class LoginComponent  {
  error :any;
- constructor(public afAuth: AngularFireAuth) {
+ constructor(public auth: AuthenticationService) {
 }
 
-   login() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  login() {
+    this.auth.login();
   }
-  logout() {
-    this.afAuth.auth.signOut();
-  }
+
 
 }
