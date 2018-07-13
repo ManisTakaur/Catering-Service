@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { MyOrdersComponent } from './my/my-orders/my-orders.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthenticationService } from './authentication.service';
+import { AuthenticationGuardService } from './authentication-guard.service';
 
 
 
@@ -52,19 +53,20 @@ import { AuthenticationService } from './authentication.service';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'logout', component: LogoutComponent },      
+      { path: 'logout', component: LogoutComponent, canActivate:[AuthenticationGuardService] },      
       { path: 'products', component: ProductsComponent },
-      { path: 'cart', component: CartComponent },
+      { path: 'cart', component: CartComponent, canActivate:[AuthenticationGuardService] },
       { path: 'order', component: OrderComponent },
       { path: 'checkout-bill', component: CheckoutBillComponent },
-      { path: 'admin/products', component: AdminProductsComponent },
-      { path: 'admin/orders', component: AdminOrdersComponent },
-      { path: 'my/my-orders', component: MyOrdersComponent}
+      { path: 'admin/products', component: AdminProductsComponent, canActivate:[AuthenticationGuardService] },
+      { path: 'admin/orders', component: AdminOrdersComponent, canActivate:[AuthenticationGuardService] },
+      { path: 'my/my-orders', component: MyOrdersComponent, canActivate:[AuthenticationGuardService]}
     ])
      // imports firebase/app needed for everything
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    AuthenticationGuardService
   ],
   bootstrap: [AppComponent]
 })
