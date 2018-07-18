@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../../category.service';
+
+
 
 @Component({
   selector: 'app-admin-product-form',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminProductFormComponent implements OnInit {
 
-  constructor() { }
+  categories$;
+  constructor( categoryService: CategoryService) { 
+    this.categories$= categoryService.getCategories();
+  }
 
   ngOnInit() {
   }

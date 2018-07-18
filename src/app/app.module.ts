@@ -27,6 +27,7 @@ import { AuthenticationService } from './authentication.service';
 import { AuthenticationGuardService } from './authentication-guard.service';
 import { AdminAuthenticationGuardService } from './admin-authentication-guard.service';
 import { AdminProductFormComponent } from './admin/admin-product-form/admin-product-form.component';
+import { CategoryService } from './category.service';
 
 
 
@@ -88,7 +89,8 @@ import { AdminProductFormComponent } from './admin/admin-product-form/admin-prod
   providers: [
     AuthenticationService,
     AuthenticationGuardService,
-    AdminAuthenticationGuardService
+    AdminAuthenticationGuardService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
