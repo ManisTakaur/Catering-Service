@@ -26,6 +26,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AuthenticationService } from './authentication.service';
 import { AuthenticationGuardService } from './authentication-guard.service';
 import { AdminAuthenticationGuardService } from './admin-authentication-guard.service';
+import { AdminProductFormComponent } from './admin/admin-product-form/admin-product-form.component';
 
 
 
@@ -44,6 +45,7 @@ import { AdminAuthenticationGuardService } from './admin-authentication-guard.se
     LoginComponent,
     MyOrdersComponent,
     LogoutComponent,
+    AdminProductFormComponent,
   ],
 
   imports: [
@@ -65,6 +67,11 @@ import { AdminAuthenticationGuardService } from './admin-authentication-guard.se
         component: AdminProductsComponent,
         canActivate:[AuthenticationGuardService, AdminAuthenticationGuardService] 
       },
+      {
+      path: 'admin/admin-products/new',
+      component: AdminProductFormComponent,
+      canActivate:[AuthenticationGuardService, AdminAuthenticationGuardService] 
+      },      
       { 
         path: 'admin/admin-orders',
         component: AdminOrdersComponent,
