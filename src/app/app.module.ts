@@ -28,6 +28,8 @@ import { AuthenticationGuardService } from './authentication-guard.service';
 import { AdminAuthenticationGuardService } from './admin-authentication-guard.service';
 import { AdminProductFormComponent } from './admin/admin-product-form/admin-product-form.component';
 import { CategoryService } from './category.service';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from './product.service';
 
 
 
@@ -51,6 +53,7 @@ import { CategoryService } from './category.service';
 
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -90,7 +93,8 @@ import { CategoryService } from './category.service';
     AuthenticationService,
     AuthenticationGuardService,
     AdminAuthenticationGuardService,
-    CategoryService
+    CategoryService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
