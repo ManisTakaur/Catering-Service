@@ -66,16 +66,22 @@ import { ProductService } from './product.service';
       { path: 'cart', component: CartComponent, canActivate:[AuthenticationGuardService] },
       { path: 'order', component: OrderComponent },
       { path: 'checkout-bill', component: CheckoutBillComponent },
-      {
-        path: 'admin/admin-products',
-        component: AdminProductsComponent,
-        canActivate:[AuthenticationGuardService, AdminAuthenticationGuardService] 
-      },
+
       {
       path: 'admin/admin-products/new',
       component: AdminProductFormComponent,
       canActivate:[AuthenticationGuardService, AdminAuthenticationGuardService] 
+      },
+      {
+      path: 'admin/admin-products/:id',
+      component: AdminProductFormComponent,
+      canActivate:[AuthenticationGuardService, AdminAuthenticationGuardService] 
       },      
+      {
+      path: 'admin/admin-products',
+      component: AdminProductsComponent,
+      canActivate:[AuthenticationGuardService, AdminAuthenticationGuardService] 
+      },
       { 
         path: 'admin/admin-orders',
         component: AdminOrdersComponent,
