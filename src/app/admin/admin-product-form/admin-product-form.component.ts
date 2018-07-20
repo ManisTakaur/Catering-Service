@@ -12,22 +12,25 @@ import 'rxjs/add/operator/take';
 })
 export class AdminProductFormComponent implements OnInit {
   product= {};
+  id;
   categories$;
   constructor( 
     categoryService: CategoryService,
     private productService: ProductService,
     private router: Router,
-    private route: ActivatedRoute
-  ) { 
+    private route: ActivatedRoute) { 
+      
     this.categories$= categoryService.getCategories();
 
-    let id= this.route.snapshot.paramMap.get('id');
-    if (id)
-      this.productService.getProduct(id).take(1).subscribe( p => this.product=p);    
+    this.id= this.route.snapshot.paramMap.get('id');
+    if (this.id)
+      this.productService.getProduct(this.id).take(1).subscribe( p => this.product=p);    
   }
 
   saveProduct(product) {
-    this.productService.createProduct(product);
+    if (this.id) this.productService.updateProduct(this.id, product);
+    else this.productService.createProduct(product);  
+
     this.router.navigate(['/admin/admin-products']);
   }
 
