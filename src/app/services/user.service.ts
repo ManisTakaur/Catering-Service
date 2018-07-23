@@ -3,7 +3,7 @@ import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 
 import * as firebase from 'firebase/app';
-import { AppUser } from './models/app-user';
+import { AppUser } from '../models/app-user';
 
 @Injectable({
   providedIn: 'root'

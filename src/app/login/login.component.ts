@@ -3,7 +3,7 @@ import { Component} from '@angular/core';
 // import * as firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
-import { AuthenticationService } from '../authentication.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-login',
