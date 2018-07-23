@@ -9,7 +9,12 @@ import 'rxjs/add/operator/map';
 export class CategoryService {
 
   constructor( private db: AngularFireDatabase) { }
-  categories$: Observable<any[]>;
+  //categories$: Observable<any[]>;
+  
+  createCategory(category) { 
+   return this.db.list('/categories').push(category);
+  }
+
   getCategories() { 
     return this.db.list('/categories', {
       query: {
@@ -17,4 +22,5 @@ export class CategoryService {
       }
     });
   }
+
 }

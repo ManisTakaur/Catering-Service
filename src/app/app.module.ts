@@ -31,6 +31,7 @@ import { CategoryService } from './services/category.service';
 import { ProductService } from './services/product.service';
 import { AdminProductFormComponent } from './admin/admin-product-form/admin-product-form.component';
 import { FormsModule } from '@angular/forms';
+import { AdminCategoriesComponent } from './admin/admin-categories/admin-categories.component';
 
 
 
@@ -46,6 +47,7 @@ import { FormsModule } from '@angular/forms';
     CheckoutBillComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
+    AdminCategoriesComponent,
     LoginComponent,
     MyOrdersComponent,
     LogoutComponent,
@@ -72,6 +74,11 @@ import { FormsModule } from '@angular/forms';
       path: 'admin/admin-products/new',
       component: AdminProductFormComponent,
       canActivate:[AuthenticationGuardService, AdminAuthenticationGuardService] 
+      },
+      {
+        path: 'admin/admin-categories/new',
+        component: AdminCategoriesComponent,
+        canActivate:[AuthenticationGuardService, AdminAuthenticationGuardService] 
       },
       {
       path: 'admin/admin-products/:id',
