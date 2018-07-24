@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-categories',
@@ -8,11 +9,15 @@ import { CategoryService } from '../../services/category.service';
 })
 export class AdminCategoriesComponent implements OnInit {
   //categoryService: any;
-  constructor(public categoryService: CategoryService) { }
+  constructor(
+    public categoryService: CategoryService,
+    public router: Router,
+    private route: ActivatedRoute) { }
 
   saveCategory(category) {
     this.categoryService.createCategory(category);
-    console.log(category);
+    this.router.navigate(['/products']);
+    //console.log(category);
     
   }
 
