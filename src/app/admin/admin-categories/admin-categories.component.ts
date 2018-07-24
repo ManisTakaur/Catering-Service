@@ -17,7 +17,7 @@ export class AdminCategoriesComponent implements OnInit {
   saveCategory(category) {
     this.categoryService.createCategory(category);
     this.router.navigate(['/products']);
-    //console.log(category);
+    console.log(category);
     
   }
 
